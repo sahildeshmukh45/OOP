@@ -6,19 +6,38 @@ public class Main {
         Parent a = new son();
         a.career();
         a.partner();
+
         Parent d = new daughter();
         d.career();
-        //you cannot create object of abstract class it  will give error because we know they did not have body
-        // also in abstract class we cannot create body it will also give error that's why we also cannot create abstract constructor
-        // abstract static method cannot be overridden so we also cannot create abstract static method in abstract class
-        // Parent mom=new Parent();
-        //but you can create static methods in abstract class that is aloud because we call static method via class name
-        //also we can create normal methods in abstract class
+
+        // We cannot create an object of an abstract class directly.
+        // It will give a compile-time error because an abstract class
+        // may contain abstract methods that do not have a body.
+        // Parent mom = new Parent();
+
+        // An abstract class CAN have constructors.
+        // We cannot create an object of the abstract class directly,
+        // but its constructor is called when an object of its subclass is created.
+
+        // An abstract class can have abstract methods, which do not have a body.
+        // It can also have normal (concrete) methods that have a body.
+
+        // An abstract static method is not allowed.
+        // Static methods cannot be overridden; they are hidden.
+        // Therefore, a method cannot be both abstract and static.
+        // public abstract static void test(); // ERROR
+
+        // We CAN create static methods inside an abstract class.
+        // They are called using the class name.
         Parent.hello();
-        //also we cannot use final keyword in abstract class
+
+        // We can also create normal (concrete) methods in an abstract class.
+
+        // An abstract class CAN have the final keyword.
+        // A final abstract class is not allowed because a final class
+        // cannot be extended, while an abstract class is meant to be extended.
+        // public abstract final class Parent // ERROR
+
         System.out.println(a.num);
-
-
-
     }
 }
